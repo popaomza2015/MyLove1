@@ -33,7 +33,7 @@ export const content = {
     music: {
       enabled: true,
       title: 'เพลงรักเบาๆ',
-      src: '/audio/get-high.mp3',       // วางไฟล์เพลง mp3 ใน public/audio/ (ถ้าไม่มีมีเสียงเปียโนบรรเลงนุ่มนวลอัตโนมัติ)
+      src: '/audio/Get high.mp3',       // วางไฟล์เพลง mp3 ใน public/audio/ (ถ้าไม่มีมีเสียงเปียโนบรรเลงนุ่มนวลอัตโนมัติ)
     },
   },
 
