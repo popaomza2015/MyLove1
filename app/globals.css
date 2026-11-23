@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts import ─────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap');
+
+/* ── Base reset ──────────────────────────── */
+@layer base {
+  html {
+    @apply bg-bg text-cream font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-dvh overflow-x-hidden;
+  }
+}
+
+/* ── Candle-glow radial background ───────── */
+.candle-bg {
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 40%,
+    #3A241C 0%,
+    #1A1412 70%,
+    #1A1412 100%
+  );
+}
+
+/* ── Scroll-snap for memories ────────────── */
+.snap-y-mandatory {
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+/* ── Warm gradient placeholder for missing images ── */
+.warm-gradient-placeholder {
+  background: linear-gradient(
+    135deg,
+    #3A241C 0%,
+    #C6A075 50%,
+    #F6F0E7 100%
+  );
+}
+
+/* ── Press ring animation ────────────────── */
+@keyframes press-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+.press-ring {
+  animation: press-ring 700ms ease-out forwards;
+}
+
+/* ── Ribbon shimmer ──────────────────────── */
+@keyframes ribbon-shimmer {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.ribbon-shimmer {
+  animation: ribbon-shimmer 2s ease-in-out infinite;
+}
+
+/* ── Reduced motion ──────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .snap-y-mandatory {
+    scroll-snap-type: none;
+  }
+
+  .press-ring {
+    animation: none;
+  }
+
+  .ribbon-shimmer {
+    animation: none;
+  }
+}
+
+/* ── Scrollbar hide for memories ─────────── */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
