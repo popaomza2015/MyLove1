@@ -45,9 +45,9 @@ export default function MusicPlayer() {
     <div className="fixed top-4 right-4 z-50 flex items-center gap-2 select-none">
       <audio
         ref={audioRef}
-        src={musicConfig.src}
+        src={musicConfig.src ? encodeURI(musicConfig.src) : undefined}
         loop
-        preload="none"
+        preload="auto"
         onError={() => {
           // If mp3 is not found, fallback handles it
         }}
